@@ -1,0 +1,137 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline9-list mg-t-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>Настройки</h1>
+                        </div>
+                    </div>
+                    <form class="sparkline9-graph" method="post" action="" id="formMain">
+                        {% csrf_token %}
+                        <div class="alert alert-danger alert-mg-b alert-st-four aaa" role="alert" style="display: none">
+                            <i class="fa fa-times adminpro-danger-error admin-check-pro admin-check-pro-none"
+                               aria-hidden="true"></i>
+                            <p class="message-mg-rt message-alert-none form-error"></p>
+                        </div>
+                        <div id="pwd-container4">
+                            <div class="form-group">
+                                <label for="">ФИО</label>
+                                {{ formMain.fio }}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                {{ formMain.email }}
+                            </div>
+                            <div class="form-group">
+                                <span class="font-bold pwstrength_viewport_verdict4"></span>
+                                <span class="pwstrength_viewport_progress4"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custon-four btn-success">
+                            <i class="fa fa-check adminpro-checked-pro" aria-hidden="true"></i> Обновить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline9-list mg-t-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>Обновить пароль</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline9-graph">
+                        <div id="pwd-container4">
+                            <div class="form-group">
+                                <label for="">Старый пароль</label>
+                                {{ formPass.password_last }}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Новый пароль</label>
+                                {{ formPass.password }}
+                            </div>
+                            <div class="form-group">
+                                <label for="">Повторите новый пароль</label>
+                                {{ formPass.password_repeat }}
+                            </div>
+                            <div class="form-group">
+                                <span class="font-bold pwstrength_viewport_verdict4"></span>
+                                <span class="pwstrength_viewport_progress4"></span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-custon-four btn-success">
+                            <i class="fa fa-check adminpro-checked-pro" aria-hidden="true"></i> Обновить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#formMain').submit(function (e) {
+                e.preventDefault();
+                let data = {
+                    'fio': $(this).find('input[name="fio"]').val(),
+                    'email': $(this).find('input[name="email"]').val(),
+                }
+                $.ajax({
+                    headers: {"X-CSRFToken": $('input[name="csrfmiddlewaretoken"]').val()},
+                    type: $(this).attr('method'),
+                    url: $(this).attr('url'),
+                    data: data,
+                    success: function (response) {
+                        $('.aaa').show();
+                        $('.form-error').empty();
+                        if (response == 'True') {
+                            $('.aaa').hide();
+                            window.location.href = "/dashboard/settings";
+                        } else {
+                            let r = JSON.parse(response)
+                            console.log(r);
+                            if (r['email']) {
+                                r['email'].forEach(function (item) {
+                                    $('.form-error').append(
+                                        "<label>" + item['message'] + "</label>"
+                                    );
+                                });
+                            }
+                            if (r['password_repeat']) {
+                                r['password_repeat'].forEach(function (item) {
+                                    $('.form-error').append(
+                                        "<label>" + item['message'] + "</label>"
+                                    );
+                                });
+                            }
+                            if (r['fio']) {
+                                r['fio'].forEach(function (item) {
+                                    $('.form-error').append(
+                                        "<label>" + item['message'] + "</label>"
+                                    );
+                                });
+                            }
+                        }
+                    }
+                });
+            })
+        });
+    </script>
+{% endblock %}

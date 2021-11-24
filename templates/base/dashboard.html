@@ -63,6 +63,10 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{% static '/dashboard/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+    <!-- jquery
+    ============================================ -->
+<script src="{% static '/dashboard/js/vendor/jquery-1.12.4.min.js' %}"></script>
 </head>
 
 <body>
@@ -79,7 +83,7 @@
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="{% static '/dashboard/img/notification/4.jpg' %}" alt=""/></a>
+                <a href="{% url 'tracker:dashboard' %}"><img src="{% static '/dashboard/img/notification/user3.png' %}" alt=""/></a>
                 <h2>Lakian <span class="min-dtn">Das</span></h2>
             </div>
         </div>
@@ -188,7 +192,7 @@
                                                 </a>
                                                 <ul role="menu"
                                                     class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                    <li><a href="#"><span
+                                                    <li><a href="{% url 'tracker:settings' %}"><span
                                                             class="icon nalika-settings author-log-ic"></span>
                                                         Настройки</a>
                                                     </li>
@@ -362,15 +366,13 @@
     </div>
 
 
-
-
-    {% include 'base/dashboard-content.html' %}
+    {% block content %}
+    {% endblock %}
+    {% comment %}{% include 'base/dashboard-content.html' %}{% endcomment %}
 </div>
 
 
-<!-- jquery
-    ============================================ -->
-<script src="{% static '/dashboard/js/vendor/jquery-1.12.4.min.js' %}"></script>
+
 <!-- bootstrap JS
     ============================================ -->
 <script src="{% static '/dashboard/js/bootstrap.min.js' %}"></script>
