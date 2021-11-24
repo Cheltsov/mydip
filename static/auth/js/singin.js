@@ -13,11 +13,42 @@ $(document).ready(function () {
             url: $(this).attr('url'),
             data: data,
             success: function (response) {
-                if(response == 'True') {
-                    window.location.href="/dashboard";
+                if (response == 'True') {
+                    window.location.href = "/dashboard";
                 } else {
-                    alert(response);
-                    return false;
+                    let r = JSON.parse(response);
+                    console.log(r);
+                    $('.form-error').show();
+                    $('.form-error').empty();
+
+                    if (r['email']) {
+                        r['email'].forEach(function (item) {
+                            $('.form-error').append(
+                                "<label>" + item['message'] + "</label>"
+                            );
+                        });
+                    }
+                    if (r['password_repeat']) {
+                        r['password_repeat'].forEach(function (item) {
+                            $('.form-error').append(
+                                "<label>" + item['message'] + "</label>"
+                            );
+                        });
+                    }
+                    if (r['fio']) {
+                        r['fio'].forEach(function (item) {
+                            $('.form-error').append(
+                                "<label>" + item['message'] + "</label>"
+                            );
+                        });
+                    }
+                    if (r['password']) {
+                        r['password'].forEach(function (item) {
+                            $('.form-error').append(
+                                "<label>" + item['message'] + "</label>"
+                            );
+                        });
+                    }
                 }
             }
         });

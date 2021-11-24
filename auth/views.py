@@ -1,9 +1,10 @@
 import datetime
 
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from .models import AuthUser
+from .forms import SingInForm
 
 
 # Create your views here.
@@ -24,7 +25,8 @@ def auth(request):
 
 def singIn(request):
     if request.method == 'POST':
-        if not AuthUser.getUserByEmail(request.POST['email']):
+        singInForm = SingInForm(request.POST)
+        if singInForm.is_valid():
             newUser = AuthUser()
             newUser.email = request.POST['email']
             newUser.password = request.POST['password']
@@ -32,14 +34,13 @@ def singIn(request):
             newUser.active = 0
             newUser.last_visit = datetime.datetime.now()
             newUser.save()
-
             request.session['token'] = 'user'
             request.session['user'] = newUser.id
-
             return HttpResponse('True')
         else:
-            return HttpResponse('Пользователь с таким email уже существует')
-    return render(request, 'auth/registation.html', {})
+            return HttpResponse(singInForm.errors.as_json())
+    form = SingInForm()
+    return render(request, 'auth/registation.html', {'form': form})
 
 
 def logOut(request):
