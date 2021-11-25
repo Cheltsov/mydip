@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include("auth.urls")),
     path('admin/', admin.site.urls),
     path('dashboard/', include("tracker.urls")),
+    path('calculate/', include("calculate.urls")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

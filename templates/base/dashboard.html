@@ -126,13 +126,27 @@
                             <li><a title="File Manager" href="file-manager.html"><span
                                     class="mini-sub-pro">Учет каллорий</span></a></li>
                             <li><a title="File Manager" href="file-manager.html"><span
-                                    class="mini-sub-pro">Калькулятор каллорий</span></a></li>
-                            <li><a title="File Manager" href="file-manager.html"><span
                                     class="mini-sub-pro">Расчет нормы жидкости</span></a></li>
                             <li><a title="File Manager" href="file-manager.html"><span
                                     class="mini-sub-pro">Стастика по питанию</span></a></li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false">
+                            <i class="icon nalika-bar-chart icon-wrap"></i><span
+                                class="mini-click-non">Норма калорий</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="File Manager" href="{% url 'calculate:calculate_harrison' %}"><span
+                                    class="mini-sub-pro">Харриса-Бенедикта</span></a></li>
+                            <li><a title="File Manager" href="{% url 'calculate:calculate_mifflin' %}"><span
+                                    class="mini-sub-pro">Миффлина-Сан Жеора</span></a></li>
+                            <li><a title="File Manager" href="{% url 'calculate:calculate_voz' %}"><span
+                                    class="mini-sub-pro">ВОЗ</span></a></li>
+                        </ul>
+                    </li>
+
+
                 </ul>
             </nav>
         </div>

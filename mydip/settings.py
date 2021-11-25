@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'crispy_forms',
-    'tracker.apps.TrackerConfig'
+    'tracker.apps.TrackerConfig',
+    'calculate.apps.CalculateConfig'
 ]
 
 MIDDLEWARE = [
