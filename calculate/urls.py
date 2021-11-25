@@ -6,4 +6,5 @@ urlpatterns = [
     path('calculate_harrison', views.calculate_harrison, name='calculate_harrison'),
     path('calculate_mifflin', views.calculate_mifflin, name='calculate_mifflin'),
     path('calculate_voz', views.calculate_voz, name='calculate_voz'),
+    path('calculate_water', views.calculate_water, name='calculate_water'),
 ]

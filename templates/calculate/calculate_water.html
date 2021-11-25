@@ -1,0 +1,140 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function(){
+            $('#mean').children('.has-arrow').trigger('click');
+        })
+    </script>
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+    </style>
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline9-list mg-t-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>Суточная норма потребления воды</h1>
+                        </div>
+                    </div>
+
+                    <div style="color: white; margin:20px 0;">
+                        <p>Речь идёт о потреблении чистой питьевой воды. Да, борщ, чай, кофе, сок не дадут умереть от
+                            обезвоживания, но стать лучшим растворителем у них не получится.</p>
+
+
+                        <h4>Случаи, в которых нужно увеличить потребление воды</h4>
+                        <p>
+                            Теперь, чтобы рассчитать более точное значение нормы воды, возьмите значение, полученное
+                            выше, и
+                            прибавьте к нему ещё некоторое количество, если это про вас:
+                        </p>
+
+                        <ol>
+                            <li>Тренировки + 400-600 мл</li>
+                            <p> Когда вы тренируетесь либо участвуете в каких-либо активных физических мероприятиях, вы
+                                потеете.
+                                Потерю этой жидкости нужно восполнять. Если физические нагрузки короткие и умеренные,
+                                указанного
+                                количества должно хватить. Когда вы нагружаете себя дольше одного часа, пейте ещё
+                                больше. Пейте
+                                не только во время активности, но и после неё.</p>
+
+                            <li>Жара или холод + 400-600 мл</li>
+                            <p>Чем жарче и влажнее погода, тем опять же вы больше потеете. Но как ни странно, иногда и
+                                зимой
+                                надо пить воды больше обычного — когда одеваетесь теплее, чем требуется, или, когда
+                                подолгу
+                                находитесь в помещении в верхней одежде.</p>
+
+                            <li>Нахождение на высоте больше 2500 метров над уровнем моря + 400 мл</li>
+                            <p>Причин много, например, потребность чаще ходить в туалет и учащённое дыхание.</p>
+
+                            <li>Лихорадка, рвота и понос + 300-800 мл</li>
+                            <p>Эти симптомы забирают много жидкости из организма, которую обязательно нужно восполнить,
+                                чтобы
+                                не усугубить ситуацию. Также обильное питьё требуется людям с мочекаменной болезнью и
+                                при
+                                воспалении мочевого пузыря. Некоторые болезни сердца, почек, печени и надпочечников
+                                служат
+                                причиной задержки излишков воды в организме. В таком случае потребление воды следует
+                                сократить –
+                                проконсультируйтесь с врачом.</p>
+
+                            <li>Беременность и кормление грудью + 500 мл</li>
+                            <p>Беременные и кормящие женщины нуждаются в большом количестве воды. Для беременных норма
+                                жидкости
+                                в день возрастает на 500 мл, а активно кормящих на 500 мл — 1 литр.</p>
+                            <li>Употребление кофе + 500 мл на каждую чашку напитка</li>
+                            <p>Продукты, содержащие кофеин, активно выводят воду из организма. Умножайте потреблённое
+                                количество на 2, чтобы помочь почкам.</p>
+                            <li>Любовь к чаю, алкоголю и сладким напиткам + объём потреблённого напитка</li>
+                            <p>Они нарушают водно-солевой обмен. Чтобы не усугублять ситуацию, добавьте к суточной норме
+                                объём,
+                                равный объёму потреблённого напитка. Если выпила 250 мл сока, добавьте 250 мл воды к
+                                суточной
+                                норме.</p>
+                        </ol>
+
+                    </div>
+
+
+                    <form class="sparkline9-graph" method="post" action="" id="formMain">
+                        {% csrf_token %}
+                        <div class="alert alert-danger alert-mg-b alert-st-four aaa" role="alert" style="display: none">
+                            <i class="fa fa-times adminpro-danger-error admin-check-pro admin-check-pro-none"
+                               aria-hidden="true"></i>
+                            <p class="message-mg-rt message-alert-none form-error"></p>
+                        </div>
+                        <div id="pwd-container4">
+                            <div class="form-group">
+                                {{ formHarrison.gender.label_tag }}
+                                {{ formHarrison.gender }}
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                {{ formHarrison.age.label_tag }}
+                                {{ formHarrison.age }}
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                {{ formHarrison.height.label_tag }}
+                                {{ formHarrison.height }}
+                            </div>
+                            <div class="form-group">
+                                {{ formHarrison.weight.label_tag }}
+                                {{ formHarrison.weight }}
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                {{ formHarrison.physic_active.label_tag }}
+                                {{ formHarrison.physic_active }}
+                            </div>
+                            <div class="form-group" style="color:white; margin-top: 25px;">
+                                <span class="font-bold pwstrength_viewport_verdict4" style="font-size: 20px;">Результат расчета:</span>
+                                <span class="pwstrength_viewport_progress4"
+                                      style="font-size: 20px;"><b>{{ resultHarrison }}</b> л/сутки</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custon-four btn-success" style="margin-top: 20px;">
+                            <i class="fa fa-check adminpro-checked-pro" aria-hidden="true"></i> Рассчитать
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

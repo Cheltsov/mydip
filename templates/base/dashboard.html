@@ -74,7 +74,11 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-
+<style>
+    #sidebar{
+        width: 270px;
+    }
+</style>
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
@@ -91,7 +95,7 @@
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
 
-                    <li class="active">
+                    <li id="dashboard">
                         <a class="has-arrow" href="#">
                             <i class="icon nalika-home icon-wrap"></i>
                             <span class="mini-click-non">Показатели</span>
@@ -118,21 +122,21 @@
                     </li>
 
 
-                    <li>
+                    <li id="mean">
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i
                                 class="icon nalika-pie-chart icon-wrap"></i> <span
                                 class="mini-click-non">Питание</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="File Manager" href="{% url 'calculate:calculate_water' %}"><span
+                                    class="mini-sub-pro">Потребление воды</span></a></li>
                             <li><a title="File Manager" href="file-manager.html"><span
                                     class="mini-sub-pro">Учет каллорий</span></a></li>
-                            <li><a title="File Manager" href="file-manager.html"><span
-                                    class="mini-sub-pro">Расчет нормы жидкости</span></a></li>
                             <li><a title="File Manager" href="file-manager.html"><span
                                     class="mini-sub-pro">Стастика по питанию</span></a></li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li id="calculate">
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false">
                             <i class="icon nalika-bar-chart icon-wrap"></i><span
                                 class="mini-click-non">Норма калорий</span></a>

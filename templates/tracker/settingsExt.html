@@ -3,6 +3,12 @@
 
 
 {% block content %}
+    <script>
+        $(document).ready(function(){
+            $('#dashboard').children('.has-arrow').trigger('click');
+        })
+    </script>
+
     <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
     <style>
         h1, label {

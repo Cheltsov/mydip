@@ -66,3 +66,16 @@ def calculate_voz(request):
 
     return render(request, 'calculate/calculate_voz.html',
                   {"formHarrison": formHarrison, 'resultHarrison': math.ceil(result)})
+
+
+def calculate_water(request):
+    userExt = UserExtSettings.objects.filter(user_id=request.session['user']).order_by('-date_created').first()
+    formHarrison = CalcCaloriesForm(request.POST or None, instance=userExt)
+
+    if request.method == 'POST' and formHarrison.is_valid():
+        result = Calories.calc_water(weight=formHarrison.cleaned_data['weight'], gender=formHarrison.cleaned_data['gender'])
+    else:
+        result = Calories.calc_water(weight=formHarrison.instance.weight, gender=formHarrison.instance.gender)
+
+    return render(request, 'calculate/calculate_water.html',
+                  {"formHarrison": formHarrison, 'resultHarrison': result})

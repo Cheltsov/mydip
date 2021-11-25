@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+    <script>
+        $(document).ready(function(){
+            $('#dashboard').children('.has-arrow').trigger('click');
+        })
+    </script>
+
+
     <div class="section-admin container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

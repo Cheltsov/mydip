@@ -35,3 +35,11 @@ class Calories:
             result = (10 * float(weight) + 6.25 * float(height) - 5 * int(age) - 161)
         return result
 
+    @staticmethod
+    def calc_water(gender, weight):
+        if gender == 'man':
+            result = weight * 40
+        else:
+            result = weight * 30
+        return result / 1000
+
