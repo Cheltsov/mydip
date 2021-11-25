@@ -1,0 +1,88 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="product-status mg-b-30 mg-t-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Список показателей</h4>
+                        <div class="add-product">
+                            <a href="{% url 'tracker:settingsExtCreate' %}">Добавить запись показателей</a>
+                        </div>
+
+                        {% if not user_extend %}
+                            <h4>Записей нет</h4>
+                        {% else %}
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Дата создания</th>
+                                    <th>Дата обновления</th>
+                                    <th>Возраст</th>
+                                    <th>Вес</th>
+                                    <th>Рост</th>
+                                    <th>Талия</th>
+                                    <th>Плечи</th>
+                                    <th>Действия</th>
+                                </tr>
+                                {% for ext in user_extend %}
+                                    <tr>
+                                        <td>{{ ext.id }}</td>
+                                        <td>{{ ext.date_created }}</td>
+                                        <td>{{ ext.date_updated }}</td>
+                                        <td>{{ ext.age }}</td>
+                                        <td>{{ ext.weight }}</td>
+                                        <td>{{ ext.height }}</td>
+                                        <td>{{ ext.waist }}</td>
+                                        <td>{{ ext.shoulders }}</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Изменить" class="pd-setting-ed" onclick="window.location.href='{% url 'tracker:settingsExtEdit' id=ext.id %}'">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </button>
+                                            <button data-toggle="tooltip" title="Удалить" class="pd-setting-ed delbtn" onclick2="{% url 'tracker:settingsExtDelete' id=ext.id %}">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                            <div class="custom-pagination" style="display: none">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.delbtn').click(function (e){
+                e.preventDefault();
+                if(confirm('Вы действительно хотите удалить запись?')) {
+                    window.location.href = $(this).attr('onclick2')
+                }
+                return false;
+            })
+        });
+    </script>
+{% endblock %}

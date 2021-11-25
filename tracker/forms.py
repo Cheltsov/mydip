@@ -1,4 +1,6 @@
 from django import forms
+
+from core.models import UserExtSettings
 from .models import UserRepository
 
 
@@ -50,3 +52,35 @@ class PasswordSettingForm(forms.Form):
 
         if password and password_repeat and password != password_repeat:
             self.add_error('password_repeat', "Пароли не совпадают")
+
+
+class SettingsExtForm(forms.ModelForm):
+    gender = forms.ChoiceField(required=True, choices=UserExtSettings.CHOICES, label="Пол", widget=forms.Select(attrs={'class': "form-control", 'placeholder': 'Пол'}))
+    age = forms.IntegerField(required=True, label='Возраст', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Возраст', 'min': 0}))
+    height = forms.DecimalField(required=True, label='Рост', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Рост', 'min': 0}))
+    weight = forms.DecimalField(required=True, label='Вес', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Вес', 'min': 0}))
+    neck = forms.DecimalField(required=False, label='Обхват шеи', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Обхват шеи', 'min': 0}))
+    shoulders = forms.DecimalField(required=False, label='Обхват плечь', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Обхват плечь', 'min': 0}))
+    chest_relax = forms.DecimalField(required=False, label='Грудь расслабленная', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Грудь расслабленная', 'min': 0}))
+    chest_tense = forms.DecimalField(required=False, label='Грудь напряженная', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Грудь напряженная', 'min': 0}))
+    left_biceps_relax = forms.DecimalField(required=False, label='Левый бицепс расслабленный', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Левый бицепс расслабленный', 'min': 0}))
+    right_biceps_relax = forms.DecimalField(required=False, label='Правый бицепс расслабленный', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Правый бицепс расслабленный', 'min': 0}))
+    left_biceps_tense = forms.DecimalField(required=False, label='Левый бицепс напряженный', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Левый бицепс напряженный', 'min': 0}))
+    right_biceps_tense = forms.DecimalField(required=False, label='Правый бицепс напряженный', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Правый бицепс напряженный', 'min': 0}))
+    left_forearm = forms.DecimalField(required=False, label='Левое предплечье', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Левое предплечье', 'min': 0}))
+    right_forearm = forms.DecimalField(required=False, label='Правое предплечье', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Правое предплечье', 'min': 0}))
+    pelvis = forms.DecimalField(required=False, label='Таз', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Таз', 'min': 0}))
+    waist = forms.DecimalField(required=False, label='Талия', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Талия', 'min': 0}))
+    left_thigh = forms.DecimalField(required=False, label='Бедро левое', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Бедро левое', 'min': 0}))
+    right_thigh = forms.DecimalField(required=False, label='Бедро правое', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Бедро правое', 'min': 0}))
+    left_shin = forms.DecimalField(required=False, label='Голень левая', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Голень левая', 'min': 0}))
+    right_shin = forms.DecimalField(required=False, label='Голень правая', widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Голень правая', 'min': 0}))
+
+    class Meta:
+        model = UserExtSettings
+        fields = '__all__'
+        exclude = ['user', 'body_mass_index']
+
+    def clean(self):
+        cleaned_data = super(SettingsExtForm, self).clean()
+        print(cleaned_data)

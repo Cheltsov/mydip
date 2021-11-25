@@ -36,7 +36,7 @@ def settings(request):
         return redirect('auth:auth')
 
 
-def settingsext(request):
+def settingsPass(request):
     if 'user' in request.session:
         user = UserRepository.objects.get(pk=request.session['user'])
         formMain = MainSettingForm({
