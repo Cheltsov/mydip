@@ -1,0 +1,120 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#removable').children('.has-arrow').trigger('click');
+        })
+    </script>
+
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="product-status mg-b-30 mg-t-15" style="margin-left: 10px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Список Тренировок</h4>
+
+                        <table>
+                            <tr>
+                                <th>Параметр</th>
+                                <th>Текущий показатель</th>
+                                <th>Необходимый показатель</th>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'height' }}</td>
+                                <td>{{ userExt.height }}</td>
+                                <td>{{ bodyParams.height }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'weight' }}</td>
+                                <td {% if userExt.weight < bodyParams.weight %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.weight }}</td>
+                                <td>{{ bodyParams.weight }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'neck' }}</td>
+                                <td {% if userExt.neck < bodyParams.neck %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.neck }}</td>
+                                <td>{{ bodyParams.neck }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'shoulders' }}</td>
+                                <td {% if userExt.shoulders < bodyParams.shoulders %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.shoulders }}</td>
+                                <td>{{ bodyParams.shoulders }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'chest_relax' }}</td>
+                                <td {% if userExt.chest_relax < bodyParams.chest_relax %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.chest_relax }}</td>
+                                <td>{{ bodyParams.chest_relax }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'waist' }}</td>
+                                <td {% if userExt.waist < bodyParams.waist %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.waist }}</td>
+                                <td>{{ bodyParams.waist }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'left_thigh' }}</td>
+                                <td {% if userExt.left_thigh < bodyParams.left_thigh %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.left_thigh }}</td>
+                                <td>{{ bodyParams.left_thigh }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'right_thigh' }}</td>
+                                <td {% if userExt.right_thigh < bodyParams.right_thigh %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.right_thigh }}</td>
+                                <td>{{ bodyParams.right_thigh }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'left_shin' }}</td>
+                                <td {% if userExt.left_shin < bodyParams.left_shin %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.left_shin }}</td>
+                                <td>{{ bodyParams.left_shin }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ bodyParams|get_verbose_name:'right_shin' }}</td>
+                                <td {% if userExt.right_shin < bodyParams.right_shin %}
+                                    style="color: red" {% else %}style="color: green"{% endif %} >{{ userExt.right_shin }}</td>
+                                <td>{{ bodyParams.right_shin }}</td>
+                            </tr>
+                        </table>
+                        <div class="custom-pagination" style="display: none">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                <button type="button" class="btn btn-custon-rounded-four btn-default" onclick="window.location.href='{% url 'tracker:goal' %}'">
+                    <i class="fa fa-home adminpro-home-admin" aria-hidden="true"></i> Назад</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

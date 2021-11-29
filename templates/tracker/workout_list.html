@@ -1,0 +1,81 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#removable').children('.has-arrow').trigger('click');
+        })
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="product-status mg-b-30 mg-t-15" style="margin-left: 10px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Список Тренировок</h4>
+
+                        {% if not True %}
+                            <h4>Записей нет</h4>
+                        {% else %}
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Название</th>
+                                    <th>Дата тренировки</th>
+                                    <th>Дата выполнения</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                                {% for item in list_work %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ item.title }}</td>
+                                        <td>{{ item.date_created }}</td>
+                                        <td>{{ item.date_finish|default_if_none:"--" }}</td>
+                                        <td>
+                                            {% if item.status %}
+                                                <button class="pd-setting">Выполнена</button>
+                                            {% else %}
+                                                <button class="ds-setting">Не выполнена</button>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Просмотреть" class="pd-setting-ed"
+                                                    onclick="window.location.href='{% url 'tracker:workout_show' id=item.id %}'">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                            <div class="custom-pagination" style="display: none">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

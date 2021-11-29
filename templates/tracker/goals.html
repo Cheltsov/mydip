@@ -1,0 +1,118 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#removable').children('.has-arrow').trigger('click');
+        })
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline9-list mg-t-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>Выберите цель физический тренировок</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row admin text-center">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for item in goals %}
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
+                                <h4 class="text-left text-uppercase">
+                                    {% if user_goal.goal_id != item.id %}
+                                        <b style="color: grey">{{ item.title }}</b></h4>
+                                    {% else %}
+                                        <b>{{ item.title }}</b></h4>
+                                    {% endif %}
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="col-xs-3 mar-bot-15 text-left">
+                                        {% if user_goal.goal_id == item.id %}
+                                            <label class="label bg-blue">{{ percent }}% </label>
+                                        {% else %}
+                                            <label class="label bg-blue">0%</label>
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        {% if user_goal.goal_id != item.id %}
+                                            <h2 class="text-right no-margin">0</h2>
+                                        {% else %}
+                                            <h2 class="text-right no-margin">{{ countobj }}</h2>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="progress progress-mini">
+                                    {% if user_goal.goal_id == item.id %}
+                                        <div style="width: {{ percent }}%;" class="progress-bar bg-blue"></div>
+                                    {% else %}
+                                        <div style="width: 0%;" class="progress-bar bg-blue"></div>
+                                    {% endif %}
+
+                                </div>
+                                <br>
+                                <div class="text-left">
+                                    <button type="button" class="btn btn-custon-four btn-success"
+                                            onclick="window.location.href='{% url 'tracker:goal_param' id=item.id %}'">
+                                        <i class="fa fa-check adminpro-checked-pro" aria-hidden="true"></i> Сравнить
+                                    </button>
+                                    {% if user_goal %}
+
+                                        {% if user_goal.goal_id == item.id %}
+                                            <button type="button" class="btn btn-custon-rounded-four btn-warning"
+                                                    onclick="window.location.href='{% url 'tracker:workout_list' %}'">
+                                                <i class="fa fa-exclamation-triangle adminpro-warning-danger"
+                                                   aria-hidden="true"></i> Перейти
+                                            </button>
+
+                                            <button type="button" class="btn btn-custon-rounded-four btn-danger"
+                                                    onclick="window.location.href='{% url 'tracker:delete_goal' id=user_goal.goal_id %}'">
+                                                <i class="fa fa-times adminpro-danger-error"
+                                                   aria-hidden="true"></i> Отменить
+                                            </button>
+                                        {% endif %}
+                                    {% else %}
+                                        <button type="button" class="btn btn-custon-rounded-four btn-warning"
+                                                onclick="window.location.href='{% url 'tracker:select_goal' id=item.id %}'">
+                                            <i class="fa fa-exclamation-triangle adminpro-warning-danger"
+                                               aria-hidden="true"></i> Выбрать
+                                        </button>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

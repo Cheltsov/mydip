@@ -1,0 +1,166 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#removable').children('.has-arrow').trigger('click');
+        })
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+    <div class="single-product-tab-area mg-t-0 mg-b-30" style="margin-top: 20px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-product-pr">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="single-product-details res-pro-tb">
+                                    <h1>{{ work.title }}</h1>
+                                    <div class="add-product">
+                                        <a style="top:0px; {% if not work.status %} right:305px {% endif %}" href="{% url 'tracker:workout_list' %}" class="btn btn-custon-four btn-default">Назад</a>
+
+                                        {% if not work.status %}
+                                            <a style="top:0px;right:170px" href="{% url 'tracker:workout_new' id=work.id %}" class="btn btn-custon-four btn-warning">Перенести</a>
+                                            <a style="top:0px" href="{% url 'tracker:workout_stop' id=work.id %}" class="btn btn-custon-four btn-danger">Завершить</a>
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="single-pro-size">
+                                        <h6>Дата создания</h6>
+                                        <p style="color: white">{{ work.date_created|date }}</p>
+                                    </div>
+                                    <div class="color-quality-pro">
+                                        <div class="color-quality-details">
+                                            <h5>Статус</h5>
+                                            {% if work.status %}
+                                                <p style="color: white">Выполнено</p>
+                                            {% else %}
+                                                <p style="color: white">Не выполнено</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="color-quality">
+                                            <h4>Дата завершения</h4>
+                                            <div class="quantity">
+                                                <p style="color: white">{{ work.date_finish|default_if_none:"--" }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                        {% comment %}<div class="single-pro-button">
+                                            <div class="pro-button">
+                                                <a href="#">ADD TO Cart</a>
+                                            </div>
+                                            <div class="pro-viwer">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                                <a href="#"><i class="fa fa-eye"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="single-social-area">
+                                            <h3>share this on</h3>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                            <a href="#"><i class="fa fa-feed"></i></a>
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div>{% endcomment %}
+                                    </div>
+                                    {% comment %}<div class="single-pro-cn">
+                                        <h3>OVERVIEW</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate </p>
+                                    </div>{% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="single-pro-review-area mt-t-30 mg-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single-tb-pr">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <ul id="myTab" class="tab-review-design">
+
+                                    {% for item in work.publications.all %}
+                                        <li {% if forloop.counter0 == 0 %} class="active" {% endif %}>
+                                            <a href="#work_{{ item.id }}">{{ item.title }}</a>
+                                        </li>
+                                        <span style="font-size: 25px; color:white;">|</span>
+
+                                    {% endfor %}
+                                </ul>
+                                <div id="myTabContent" class="tab-content">
+                                    {% for item in work.publications.all %}
+                                        <div class="product-tab-list tab-pane fade {% if forloop.counter0 == 0 %} active in{% endif %}"
+                                             id="work_{{ item.id }}">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="review-content-section">
+                                                        <div class="review-content-section">
+                                                            <div class="card-block">
+                                                                <div class="m-t-10">
+                                                                    <div class="txt-primary f-18 f-w-600">
+                                                                        <h1>{{ item.title }}</h1>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-group mg-b-15 mg-t-15">
+                                                                    <h3 style="color: white">Категория</h3>
+                                                                    <p>{{ item.category }}</p>
+                                                                </div>
+                                                                <div class="input-group mg-b-15 mg-t-15">
+                                                                    <h3 style="color: white">Описание</h3>
+                                                                    <p>{{ item.description }}</p>
+                                                                </div>
+                                                                <div class="input-group mg-b-15 mg-t-15">
+                                                                    <h3 style="color: white">Мышцы</h3>
+                                                                    <p>Диаграмма показывает самые используемые мышцы в
+                                                                        этом упражнении</p>
+                                                                    <p>
+                                                                        <span style="width:1em;height:1em;background-color:#cc0000;float:left;margin-right:0.5em;"></span>
+                                                                        Основные мышцы
+                                                                    </p>
+                                                                    <p>
+                                                                        <span style="width:1em;height:1em;background-color:#f57900;float:left;margin-right:0.5em;"></span>
+                                                                        Второстепенные мышцы
+                                                                    </p>
+                                                                </div>
+                                                                <div class="input-group mg-b-15 mg-t-15">
+                                                                    <img src="{{ item.image }}" alt="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

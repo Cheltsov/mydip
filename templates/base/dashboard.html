@@ -114,10 +114,12 @@
                                 class="mini-click-non">Тренировки</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
 
-                            <li><a title="Login" href="login.html"><span
-                                    class="mini-sub-pro">Спикок тренировок</span></a></li>
-                            <li><a title="Register" href="register.html"><span class="mini-sub-pro">Стастика по тренировкам</span></a>
-
+                            <li><a title="Login" href="{% url 'tracker:goal' %}"><span
+                                    class="mini-sub-pro">Выбрать цель</span></a></li>
+                            <li><a title="Login" href="{% url 'tracker:workout_list' %}"><span
+                                    class="mini-sub-pro">Список тренировок</span></a></li>
+                             <li><a title="Login" href="{% url 'tracker:workout_list' %}"><span
+                                    class="mini-sub-pro">Прогноз тренировок</span></a></li>
                         </ul>
                     </li>
 

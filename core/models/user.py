@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class User(models.Model):
     fio = models.CharField(max_length=50, verbose_name="ФИО", blank=True)
     email = models.EmailField(max_length=100, verbose_name="Email", blank=True)
@@ -16,5 +15,3 @@ class User(models.Model):
         ordering = ['fio']
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
-
-
