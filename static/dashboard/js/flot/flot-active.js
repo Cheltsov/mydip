@@ -49,7 +49,7 @@
         },
         label: "Product 1",
         stack: !0,
-        color: "#fff"
+        color: "#58dafe"
     }, {
         data: d3,
         lines: {

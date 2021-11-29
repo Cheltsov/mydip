@@ -70,3 +70,10 @@ class BodyWorkout(models.Model):
     goal = models.ForeignKey(Goals, on_delete=models.CASCADE)
 
 
+class UserFood(models.Model):
+    date_created = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
+    date_updated = models.DateTimeField(verbose_name='Дата изменения', auto_now=True, null=True)
+    title = models.CharField(max_length=100, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание', null=True)
+    cal = models.IntegerField(verbose_name='Количество каллорий')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

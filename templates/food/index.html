@@ -1,0 +1,84 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#mean').children('.has-arrow').trigger('click');
+        })
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="product-status mg-b-30 mg-t-15" style="margin-left: 10px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Учет калорий</h4>
+                        <div class="add-product">
+                            <a href="{% url 'tracker:foodAdd' %}">Добавить запись</a>
+                        </div>
+
+                        <h4 style="color: white">Общее кол-во калорий за {{ today|date }} - {{ countAll.cal__sum}} ккал</h4>
+
+                        {% if not list_food %}
+                            <h4>Записей нет</h4>
+                        {% else %}
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Название</th>
+                                    <th>Ккал</th>
+                                    <th>Дата создания</th>
+                                    <th>Дата изменения</th>
+                                    <th>Действия</th>
+                                </tr>
+                                {% for item in list_food %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ item.title }}</td>
+                                        <td>{{ item.cal }}</td>
+                                        <td>{{ item.date_created }}</td>
+                                        <td>{{ item.date_updated|default_if_none:"--" }}</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Изменить" class="pd-setting-ed"
+                                                    onclick="window.location.href='{% url 'tracker:foodUpdate' id=item.id %}'">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </button>
+                                            <button data-toggle="tooltip" title="Удалить" class="pd-setting-ed"
+                                                    onclick="window.location.href='{% url 'tracker:foodDelete' id=item.id %}'">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                            <div class="custom-pagination" style="display: none">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

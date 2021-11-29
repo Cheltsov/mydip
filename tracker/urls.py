@@ -17,4 +17,10 @@ urlpatterns = [
     path('workout/show/<int:id>', views.workout_show, name='workout_show'),
     path('workout/stop/<int:id>', views.workout_stop, name='workout_stop'),
     path('workout/new/<int:id>', views.workout_new, name='workout_new'),
+
+    path('food', views.foodIndex, name='foodIndex'),
+    path('food/add', views.foodAdd, name='foodAdd'),
+    path('food/update/<int:id>', views.foodUpdate, name='foodUpdate'),
+    path('food/delete/<int:id>', views.foodDelete, name='foodDelete'),
+    path('food/stat', views.foodStat, name='foodStat'),
 ]

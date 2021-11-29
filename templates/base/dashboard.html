@@ -131,10 +131,10 @@
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="File Manager" href="{% url 'calculate:calculate_water' %}"><span
                                     class="mini-sub-pro">Потребление воды</span></a></li>
-                            <li><a title="File Manager" href="file-manager.html"><span
+                            <li><a title="File Manager" href="{% url 'tracker:foodIndex' %}"><span
                                     class="mini-sub-pro">Учет каллорий</span></a></li>
-                            <li><a title="File Manager" href="file-manager.html"><span
-                                    class="mini-sub-pro">Стастика по питанию</span></a></li>
+                            <li><a title="File Manager" href="{% url 'tracker:foodStat' %}"><span
+                                    class="mini-sub-pro">Статистика по питанию</span></a></li>
                         </ul>
                     </li>
 

@@ -1,6 +1,6 @@
 from django import forms
 
-from core.models import UserExtSettings
+from core.models import UserExtSettings, UserFood
 from .models import UserRepository
 
 
@@ -84,3 +84,16 @@ class SettingsExtForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super(SettingsExtForm, self).clean()
         print(cleaned_data)
+
+
+class FoodForm(forms.ModelForm):
+
+    title = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': "form-control", 'placeholder': 'Название'}), label='Название')
+    description = forms.CharField(required=False, widget=forms.Textarea(attrs={'class': "form-control", 'placeholder': 'Описание'}), label='Описание')
+    cal = forms.IntegerField(required=True, widget=forms.NumberInput(attrs={'class': "form-control", 'placeholder': 'Количество каллорий', 'min': 0}), label='Количество каллорий')
+    date_created = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'class': "form-control", 'placeholder': 'Дата создания'}))
+
+    class Meta:
+        model = UserFood
+        fields = '__all__'
+        exclude = ['user']
