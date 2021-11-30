@@ -1,0 +1,80 @@
+{% extends 'base/dashboard.html' %}
+{% load static %}
+
+
+{% block content %}
+    <script>
+        $(document).ready(function () {
+            $('#dashboard').children('.has-arrow').trigger('click');
+        })
+    </script>
+    <link rel="stylesheet" href="{% static 'dashboard/css/alerts.css' %}">
+    <style>
+        h1, label {
+            color: white !important;
+        }
+    </style>
+
+
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline9-list mg-t-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>Анализ показателей</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="section-admin container-fluid" style="margin-left: 10px;">
+        <div class="row admin text-center">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for item in listExt %}
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-bottom: 15px;">
+                            <div class="admin-content analysis-progrebar-ctn res-mg-t-15">
+                                <h4 class="text-left text-uppercase">
+                                    <b>{{ objExt|get_verbose_name_ext:item.key }}</b></h4>
+                                <div class="row vertical-center-box vertical-center-box-tablet">
+                                    <div class="col-xs-3 mar-bot-15 text-left">
+                                        <h2 class="text-left no-margin" style="color:white;">{{ item.value }}</h2>
+                                    </div>
+                                    <div class="col-xs-9 cus-gh-hd-pro">
+                                        {% comment %}<h2 class="text-right no-margin">{{ item.value }}</h2>{% endcomment %}
+                                    </div>
+                                </div>
+                                {% comment %}<div class="progress progress-mini">
+                                    <div style="width: 0%;" class="progress-bar bg-blue"></div>
+
+                                </div>{% endcomment %}
+                                <br>
+                                <div class="text-left">
+                                    <button type="button" class="btn btn-custon-rounded-four btn-warning"
+                                            onclick="window.location.href='{% url 'tracker:analyzeParam' name=item.key %}'">
+                                        <i class="fa fa-exclamation-triangle adminpro-warning-danger"
+                                           aria-hidden="true"></i> Анализ
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+{% endblock %}

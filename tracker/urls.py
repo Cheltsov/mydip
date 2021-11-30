@@ -23,4 +23,8 @@ urlpatterns = [
     path('food/update/<int:id>', views.foodUpdate, name='foodUpdate'),
     path('food/delete/<int:id>', views.foodDelete, name='foodDelete'),
     path('food/stat', views.foodStat, name='foodStat'),
+
+
+    path('analyze', views.analyzeIndex, name='analyzeIndex'),
+    path('analyze-param/<str:name>', views.analyzeParam, name='analyzeParam'),
 ]
