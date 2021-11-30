@@ -18,10 +18,12 @@ def calculate_harrison(request):
         if formHarrison.cleaned_data['physic_active']:
             result = result * float(request.POST['physic_active'])
     else:
-        result = Calories.calc_harrison(gender=formHarrison.instance.gender,
-                                        age=formHarrison.instance.age,
-                                        weight=formHarrison.instance.weight,
-                                        height=formHarrison.instance.height)
+        result = 0
+        if userExt:
+            result = Calories.calc_harrison(gender=formHarrison.instance.gender,
+                                            age=formHarrison.instance.age,
+                                            weight=formHarrison.instance.weight,
+                                            height=formHarrison.instance.height)
 
     return render(request, 'calculate/calculate_harrison.html',
                   {"formHarrison": formHarrison, 'resultHarrison': math.ceil(result)})
@@ -39,10 +41,12 @@ def calculate_mifflin(request):
         if formHarrison.cleaned_data['physic_active']:
             result = result * float(request.POST['physic_active'])
     else:
-        result = Calories.calc_mifflin(gender=formHarrison.instance.gender,
-                                       age=formHarrison.instance.age,
-                                       weight=formHarrison.instance.weight,
-                                       height=formHarrison.instance.height)
+        result = 0
+        if userExt:
+            result = Calories.calc_mifflin(gender=formHarrison.instance.gender,
+                                           age=formHarrison.instance.age,
+                                           weight=formHarrison.instance.weight,
+                                           height=formHarrison.instance.height)
 
     return render(request, 'calculate/calculate_mifflin.html',
                   {"formHarrison": formHarrison, 'resultHarrison': math.ceil(result)})
@@ -60,9 +64,11 @@ def calculate_voz(request):
         if formHarrison.cleaned_data['physic_active']:
             result = result * float(request.POST['physic_active'])
     else:
-        result = Calories.cacl_voz(age=formHarrison.instance.age,
-                                   weight=formHarrison.instance.weight,
-                                   gender=formHarrison.instance.gender)
+        result = 0
+        if userExt:
+            result = Calories.cacl_voz(age=formHarrison.instance.age,
+                                       weight=formHarrison.instance.weight,
+                                       gender=formHarrison.instance.gender)
 
     return render(request, 'calculate/calculate_voz.html',
                   {"formHarrison": formHarrison, 'resultHarrison': math.ceil(result)})
@@ -73,9 +79,12 @@ def calculate_water(request):
     formHarrison = CalcCaloriesForm(request.POST or None, instance=userExt)
 
     if request.method == 'POST' and formHarrison.is_valid():
-        result = Calories.calc_water(weight=formHarrison.cleaned_data['weight'], gender=formHarrison.cleaned_data['gender'])
+        result = Calories.calc_water(weight=formHarrison.cleaned_data['weight'],
+                                     gender=formHarrison.cleaned_data['gender'])
     else:
-        result = Calories.calc_water(weight=formHarrison.instance.weight, gender=formHarrison.instance.gender)
+        result = 0
+        if userExt:
+            result = Calories.calc_water(weight=formHarrison.instance.weight, gender=formHarrison.instance.gender)
 
     return render(request, 'calculate/calculate_water.html',
                   {"formHarrison": formHarrison, 'resultHarrison': result})

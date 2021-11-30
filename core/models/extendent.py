@@ -2,6 +2,8 @@ import math
 
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.template.defaultfilters import register
+
 from core.models import User
 
 
@@ -49,6 +51,10 @@ class UserExtSettings(models.Model):
     body_mass_index = models.FloatField(max_length=100, verbose_name="Индекс массы тела", null=True)
     date_created = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания", null=True)
     date_updated = models.DateTimeField(auto_now=True, verbose_name="Дата обновления", null=True)
+
+    @register.filter(name='get_verbose_name_ext')
+    def get_verbose_name(self, name):
+        return self._meta.get_field(name).verbose_name
 
     def __str__(self):
         return self.id
