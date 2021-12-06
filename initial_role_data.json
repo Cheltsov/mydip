@@ -1,0 +1,971 @@
+[
+  {
+    "model": "core.user",
+    "pk": 1,
+    "fields": {
+      "fio": "Виер Евгений Владимирович",
+      "email": "kostyarach40@gmail.com",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T13:38:55.833Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 2,
+    "fields": {
+      "fio": "Виер Евгений Владимиро",
+      "email": "admin@asd12.1321",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T13:41:57.971Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 3,
+    "fields": {
+      "fio": "Виер Евгений Владимиро",
+      "email": "admin@asdq32.r",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T13:43:06.505Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 4,
+    "fields": {
+      "fio": "Мищенко Вячеслав Иванович",
+      "email": "admin@asda.qeqq",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T13:47:01.701Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 5,
+    "fields": {
+      "fio": "Виер Евгений Владимиро",
+      "email": "admin@ad.23",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T13:54:14.676Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 6,
+    "fields": {
+      "fio": "Мищенко Вячеслав Иванович2132",
+      "email": "123kostyarach40@gmail.com",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T14:24:54.183Z"
+    }
+  },
+  {
+    "model": "core.user",
+    "pk": 12,
+    "fields": {
+      "fio": "Виер Евгений Владимиро",
+      "email": "kostyarach40@gmail.com1",
+      "password": "11111",
+      "active": false,
+      "last_visit": "2021-11-24T18:43:52.051Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 58.8,
+      "neck": 35.0,
+      "shoulders": 103.0,
+      "chest_relax": 89.0,
+      "chest_tense": 94.0,
+      "left_biceps_relax": 30.0,
+      "right_biceps_relax": 30.0,
+      "left_biceps_tense": 33.0,
+      "right_biceps_tense": 33.0,
+      "left_forearm": 26.0,
+      "right_forearm": 26.0,
+      "pelvis": 80.0,
+      "waist": 73.0,
+      "left_thigh": 53.0,
+      "right_thigh": 54.0,
+      "left_shin": 34.0,
+      "right_shin": 34.0,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-11-30T13:04:54.831Z",
+      "date_updated": "2021-11-30T13:04:54.831Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 58.8,
+      "neck": 35.0,
+      "shoulders": 103.2,
+      "chest_relax": 89.2,
+      "chest_tense": 94.2,
+      "left_biceps_relax": 30.3,
+      "right_biceps_relax": 30.3,
+      "left_biceps_tense": 33.2,
+      "right_biceps_tense": 33.2,
+      "left_forearm": 26.1,
+      "right_forearm": 26.1,
+      "pelvis": 80.0,
+      "waist": 73.0,
+      "left_thigh": 53.1,
+      "right_thigh": 53.1,
+      "left_shin": 34.2,
+      "right_shin": 34.2,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-01T00:00:00Z",
+      "date_updated": "2021-12-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 9,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 59.0,
+      "neck": 35.1,
+      "shoulders": 103.3,
+      "chest_relax": 89.2,
+      "chest_tense": 94.4,
+      "left_biceps_relax": 30.5,
+      "right_biceps_relax": 30.5,
+      "left_biceps_tense": 33.2,
+      "right_biceps_tense": 33.2,
+      "left_forearm": 26.2,
+      "right_forearm": 26.2,
+      "pelvis": 80.2,
+      "waist": 73.0,
+      "left_thigh": 53.1,
+      "right_thigh": 53.1,
+      "left_shin": 34.3,
+      "right_shin": 34.3,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-02T00:00:00Z",
+      "date_updated": "2021-12-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 10,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 59.1,
+      "neck": 35.2,
+      "shoulders": 103.4,
+      "chest_relax": 89.4,
+      "chest_tense": 94.4,
+      "left_biceps_relax": 30.6,
+      "right_biceps_relax": 30.6,
+      "left_biceps_tense": 33.2,
+      "right_biceps_tense": 33.2,
+      "left_forearm": 26.3,
+      "right_forearm": 26.3,
+      "pelvis": 80.2,
+      "waist": 73.0,
+      "left_thigh": 53.1,
+      "right_thigh": 53.1,
+      "left_shin": 34.3,
+      "right_shin": 34.3,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-03T00:00:00Z",
+      "date_updated": "2021-12-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 11,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 59.1,
+      "neck": 35.2,
+      "shoulders": 103.4,
+      "chest_relax": 89.4,
+      "chest_tense": 94.4,
+      "left_biceps_relax": 30.6,
+      "right_biceps_relax": 30.6,
+      "left_biceps_tense": 33.3,
+      "right_biceps_tense": 33.3,
+      "left_forearm": 26.3,
+      "right_forearm": 26.3,
+      "pelvis": 80.2,
+      "waist": 73.0,
+      "left_thigh": 53.3,
+      "right_thigh": 53.3,
+      "left_shin": 34.4,
+      "right_shin": 34.4,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-04T00:00:00Z",
+      "date_updated": "2021-12-04T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 12,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 59.2,
+      "neck": 35.3,
+      "shoulders": 103.4,
+      "chest_relax": 89.4,
+      "chest_tense": 94.5,
+      "left_biceps_relax": 30.8,
+      "right_biceps_relax": 30.6,
+      "left_biceps_tense": 33.6,
+      "right_biceps_tense": 33.6,
+      "left_forearm": 26.6,
+      "right_forearm": 26.6,
+      "pelvis": 80.2,
+      "waist": 73.0,
+      "left_thigh": 53.3,
+      "right_thigh": 53.3,
+      "left_shin": 34.4,
+      "right_shin": 34.4,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-05T00:00:00Z",
+      "date_updated": "2021-12-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.userextsettings",
+    "pk": 13,
+    "fields": {
+      "user": 1,
+      "gender": "man",
+      "age": 23,
+      "height": 170.0,
+      "weight": 58.2,
+      "neck": 35.0,
+      "shoulders": 102.0,
+      "chest_relax": 88.0,
+      "chest_tense": 91.0,
+      "left_biceps_relax": 30.1,
+      "right_biceps_relax": 30.1,
+      "left_biceps_tense": 35.6,
+      "right_biceps_tense": 35.6,
+      "left_forearm": 21.6,
+      "right_forearm": 21.6,
+      "pelvis": 80.2,
+      "waist": 73.0,
+      "left_thigh": 53.3,
+      "right_thigh": 53.3,
+      "left_shin": 34.4,
+      "right_shin": 34.4,
+      "body_mass_index": 0.0020346020761245675,
+      "date_created": "2021-12-05T00:00:00Z",
+      "date_updated": "2021-12-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "core.goals",
+    "pk": 1,
+    "fields": {
+      "title": "Подтянутое телосложение"
+    }
+  },
+  {
+    "model": "core.goals",
+    "pk": 2,
+    "fields": {
+      "title": "Нормальное телосложение"
+    }
+  },
+  {
+    "model": "core.goals",
+    "pk": 3,
+    "fields": {
+      "title": "Сильное телосложение"
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 1,
+    "fields": {
+      "height": 165.0,
+      "weight": 65.5,
+      "neck": 35.0,
+      "shoulders": 35.0,
+      "chest_relax": 105.0,
+      "waist": 75.0,
+      "left_thigh": 55.0,
+      "right_thigh": 55.0,
+      "left_shin": 35.0,
+      "right_shin": 35.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 2,
+    "fields": {
+      "height": 166.0,
+      "weight": 65.5,
+      "neck": 35.5,
+      "shoulders": 35.5,
+      "chest_relax": 106.0,
+      "waist": 76.0,
+      "left_thigh": 55.5,
+      "right_thigh": 55.5,
+      "left_shin": 35.5,
+      "right_shin": 35.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 3,
+    "fields": {
+      "height": 167.0,
+      "weight": 68.0,
+      "neck": 36.0,
+      "shoulders": 36.0,
+      "chest_relax": 107.0,
+      "waist": 77.0,
+      "left_thigh": 56.0,
+      "right_thigh": 56.0,
+      "left_shin": 36.0,
+      "right_shin": 36.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 4,
+    "fields": {
+      "height": 168.0,
+      "weight": 69.5,
+      "neck": 36.5,
+      "shoulders": 36.5,
+      "chest_relax": 108.0,
+      "waist": 78.0,
+      "left_thigh": 56.5,
+      "right_thigh": 56.5,
+      "left_shin": 36.5,
+      "right_shin": 36.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 5,
+    "fields": {
+      "height": 169.0,
+      "weight": 71.0,
+      "neck": 37.0,
+      "shoulders": 37.0,
+      "chest_relax": 109.0,
+      "waist": 79.0,
+      "left_thigh": 57.0,
+      "right_thigh": 57.0,
+      "left_shin": 37.0,
+      "right_shin": 37.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 6,
+    "fields": {
+      "height": 170.0,
+      "weight": 72.5,
+      "neck": 37.5,
+      "shoulders": 37.5,
+      "chest_relax": 110.0,
+      "waist": 80.0,
+      "left_thigh": 57.5,
+      "right_thigh": 57.5,
+      "left_shin": 37.5,
+      "right_shin": 37.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 7,
+    "fields": {
+      "height": 171.0,
+      "weight": 74.0,
+      "neck": 38.0,
+      "shoulders": 38.0,
+      "chest_relax": 111.0,
+      "waist": 81.0,
+      "left_thigh": 58.0,
+      "right_thigh": 58.0,
+      "left_shin": 38.0,
+      "right_shin": 38.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 8,
+    "fields": {
+      "height": 172.0,
+      "weight": 75.5,
+      "neck": 38.5,
+      "shoulders": 38.5,
+      "chest_relax": 112.0,
+      "waist": 82.0,
+      "left_thigh": 58.5,
+      "right_thigh": 58.5,
+      "left_shin": 38.5,
+      "right_shin": 38.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 9,
+    "fields": {
+      "height": 173.0,
+      "weight": 77.0,
+      "neck": 39.0,
+      "shoulders": 39.0,
+      "chest_relax": 113.0,
+      "waist": 83.0,
+      "left_thigh": 59.0,
+      "right_thigh": 59.0,
+      "left_shin": 39.0,
+      "right_shin": 39.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 10,
+    "fields": {
+      "height": 174.0,
+      "weight": 78.5,
+      "neck": 39.5,
+      "shoulders": 39.5,
+      "chest_relax": 114.0,
+      "waist": 84.0,
+      "left_thigh": 59.5,
+      "right_thigh": 59.5,
+      "left_shin": 39.5,
+      "right_shin": 39.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 11,
+    "fields": {
+      "height": 175.0,
+      "weight": 80.0,
+      "neck": 40.0,
+      "shoulders": 40.0,
+      "chest_relax": 115.0,
+      "waist": 85.0,
+      "left_thigh": 60.0,
+      "right_thigh": 60.0,
+      "left_shin": 40.0,
+      "right_shin": 40.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 12,
+    "fields": {
+      "height": 176.0,
+      "weight": 81.5,
+      "neck": 40.5,
+      "shoulders": 40.5,
+      "chest_relax": 116.0,
+      "waist": 86.0,
+      "left_thigh": 60.5,
+      "right_thigh": 60.5,
+      "left_shin": 40.5,
+      "right_shin": 40.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 13,
+    "fields": {
+      "height": 177.0,
+      "weight": 83.0,
+      "neck": 41.0,
+      "shoulders": 41.0,
+      "chest_relax": 117.0,
+      "waist": 87.0,
+      "left_thigh": 61.0,
+      "right_thigh": 61.0,
+      "left_shin": 41.0,
+      "right_shin": 41.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 14,
+    "fields": {
+      "height": 178.0,
+      "weight": 84.5,
+      "neck": 41.5,
+      "shoulders": 41.5,
+      "chest_relax": 118.0,
+      "waist": 88.0,
+      "left_thigh": 61.5,
+      "right_thigh": 61.5,
+      "left_shin": 41.5,
+      "right_shin": 41.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 15,
+    "fields": {
+      "height": 179.0,
+      "weight": 86.0,
+      "neck": 42.0,
+      "shoulders": 42.0,
+      "chest_relax": 119.0,
+      "waist": 89.0,
+      "left_thigh": 62.0,
+      "right_thigh": 62.0,
+      "left_shin": 42.0,
+      "right_shin": 42.0,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.normalbodyparam",
+    "pk": 16,
+    "fields": {
+      "height": 180.0,
+      "weight": 87.5,
+      "neck": 42.5,
+      "shoulders": 42.5,
+      "chest_relax": 120.0,
+      "waist": 90.0,
+      "left_thigh": 62.5,
+      "right_thigh": 62.5,
+      "left_shin": 42.5,
+      "right_shin": 42.5,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.usergoal",
+    "pk": 15,
+    "fields": {
+      "user": 1,
+      "goal": 2
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 1,
+    "fields": {
+      "title": "Бег\n",
+      "description": "Бег предоставляет хорошие условия в качестве аэробной тренировки, которая увеличивает порог выносливости, положительно влияет на сердечно-сосудистую систему, повышает обмен веществ в организме и, таким образом, помогает осуществлять контроль за весом тела. Бег позитивно влияет на иммунную систему и улучшает тонус кожи. Укрепление мускулатуры ног и улучшение обмена веществ помогает предотвратить и устранить целлюлит.",
+      "image": "/static/body/1.png",
+      "category": "Ноги",
+      "main_muscles": "Четырехглавой мышцы бедра",
+      "minor_muscles": "Двуглавая мышца, бедра Gastrocnemius, Большая ягодичная мышца",
+      "sport_equipment": ""
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 2,
+    "fields": {
+      "title": "Жим ногами (широкий)",
+      "description": "Сядьте на тренажер и поставьте ступни на платформу чуть шире плеч. Стопы вывернуты наружу на несколько градусов. Опустите вес настолько, чтобы колени образовали прямой угол. Немедленно снова толкните платформу вверх, без пауз. В нижнем положении колени немного направлены наружу, и движения должны быть всегда плавными.",
+      "image": "/static/body/3.png",
+      "category": "Ноги",
+      "main_muscles": "Четырехглавой мышцы бедра",
+      "minor_muscles": "Большая ягодичная мышца",
+      "sport_equipment": null
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 3,
+    "fields": {
+      "title": "Жим ногами на тренажере Хакеншмидта",
+      "description": null,
+      "image": "/static/body/4.png",
+      "category": "Ноги",
+      "main_muscles": "Четырехглавой мышцы бедра",
+      "minor_muscles": null,
+      "sport_equipment": null
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 4,
+    "fields": {
+      "title": "Разгибания ног",
+      "description": "Разгибатель ног сидя",
+      "image": "/static/body/5.png",
+      "category": "Ноги",
+      "main_muscles": null,
+      "minor_muscles": null,
+      "sport_equipment": null
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 5,
+    "fields": {
+      "title": "Сгибания рук на бицепс с гантелями",
+      "description": "Держите две штанги, руки вытянуты, кисти на боку, ладони обращены внутрь. Согните руки и поднимите вес быстрым движением вверх. При этом поверните руки на 90 градусов в самом начале движения. В самой высокой точке немного поверните гири наружу. Без пауз медленно опустите их. Не позволяйте своему телу раскачиваться во время упражнения, всю работу выполняют бицепсы - единственные мышцы, которые должны двигаться (обратите внимание на локти).",
+      "image": "/static/body/6.png",
+      "category": "Руки",
+      "main_muscles": "Двуглавая мышца плеча Брахиалис",
+      "minor_muscles": null,
+      "sport_equipment": "Гантель"
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 6,
+    "fields": {
+      "title": "Отжимания",
+      "description": "Начните с вытянутого тела, руки на ширине плеч лежат на земле. Отрывайтесь от земли, пока не растянете руки. Спина всегда прямая, как и шея (всегда смотрите в пол). Опуститесь в исходное положение и повторите.",
+      "image": "/static/body/7.png",
+      "category": "Руки",
+      "main_muscles": "Трицепс плеча",
+      "minor_muscles": "Передняя дельтовидная Большая грудная мышца Прямая мышца",
+      "sport_equipment": null
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 7,
+    "fields": {
+      "title": "Отжимания на брусьях",
+      "description": "Возьмитесь за перекладины в узком месте (если они не параллельны) и напрягитесь, но не растягивайте руки полностью, чтобы мышцы оставались в течение всего упражнения под напряжением. Теперь согните руки и опустите вниз как можно глубже, всегда держа локти назад. На этом этапе вы можете сделать короткую паузу, прежде чем повторять движение.\n",
+      "image": "/static/body/8.png",
+      "category": "Руки",
+      "main_muscles": "Трицепс плеча",
+      "minor_muscles": "Большая грудная мышца Прямая мышца живота",
+      "sport_equipment": null
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 8,
+    "fields": {
+      "title": "Жим от плеч, гантели",
+      "description": "Сядьте на скамью, спинка должна быть почти вертикальной. Возьмите две гантели и поднимите их на высоту плеч, ладони и локти на протяжении всего упражнения направлены вперед. Поднимите гири вверх, в наивысшей точке они подходят очень близко, но не касаются. Медленно спуститесь и повторите.",
+      "image": "/static/body/9.png",
+      "category": "Плечи",
+      "main_muscles": "Передняя дельтовидная",
+      "minor_muscles": null,
+      "sport_equipment": "Гантель"
+    }
+  },
+  {
+    "model": "core.bodyexercise",
+    "pk": 9,
+    "fields": {
+      "title": "Шраги, Гантели",
+      "description": "Встаньте прямо, руки свободно свисают по бокам и держите в каждой по гантели. Поднимите из этого положения плечи как можно выше, но не сгибайте руки во время движения. В самой высокой точке сделайте короткую паузу в 1-2 секунды, прежде чем медленно вернуться в исходное положение. При тренировке с большим весом убедитесь, что вы все еще делаете все движение!",
+      "image": "/static/body/1.png",
+      "category": "Плечи",
+      "main_muscles": "Передняя дельтовидная",
+      "minor_muscles": null,
+      "sport_equipment": "Гантель"
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 157,
+    "fields": {
+      "title": "Тренировка 1",
+      "date_created": "2021-12-03T00:00:00Z",
+      "date_finish": "2021-11-29T16:02:52.248Z",
+      "status": true,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 158,
+    "fields": {
+      "title": "Тренировка 2",
+      "date_created": "2021-12-06T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 159,
+    "fields": {
+      "title": "Тренировка 3",
+      "date_created": "2021-12-07T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 160,
+    "fields": {
+      "title": "Тренировка 4",
+      "date_created": "2021-12-09T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 161,
+    "fields": {
+      "title": "Тренировка 5",
+      "date_created": "2021-12-13T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 162,
+    "fields": {
+      "title": "Тренировка 6",
+      "date_created": "2021-12-13T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 163,
+    "fields": {
+      "title": "Тренировка 7",
+      "date_created": "2021-12-15T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 164,
+    "fields": {
+      "title": "Тренировка 8",
+      "date_created": "2021-12-17T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 165,
+    "fields": {
+      "title": "Тренировка 9",
+      "date_created": "2021-12-20T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 166,
+    "fields": {
+      "title": "Тренировка 10",
+      "date_created": "2021-12-21T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 167,
+    "fields": {
+      "title": "Тренировка 11",
+      "date_created": "2021-12-23T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.bodyworkout",
+    "pk": 168,
+    "fields": {
+      "title": "Тренировка 12",
+      "date_created": "2021-12-27T00:00:00Z",
+      "date_finish": null,
+      "status": false,
+      "user": 1,
+      "goal": 2,
+      "publications": [
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "core.userfood",
+    "pk": 5,
+    "fields": {
+      "date_created": "2021-11-29T16:47:00.932Z",
+      "date_updated": "2021-11-29T16:47:14.896Z",
+      "title": "Обед 2",
+      "description": "Пюрешка с котлеткой и подливой",
+      "cal": 126,
+      "user": 1
+    }
+  },
+  {
+    "model": "core.userfood",
+    "pk": 6,
+    "fields": {
+      "date_created": "2021-11-29T16:55:01.028Z",
+      "date_updated": "2021-11-29T16:55:01.028Z",
+      "title": "Ужин",
+      "description": "",
+      "cal": 127,
+      "user": 1
+    }
+  },
+  {
+    "model": "core.userfood",
+    "pk": 9,
+    "fields": {
+      "date_created": "2021-12-02T00:00:00Z",
+      "date_updated": "2021-12-02T00:00:00Z",
+      "title": "eqweq",
+      "description": "",
+      "cal": 111,
+      "user": 1
+    }
+  },
+  {
+    "model": "core.userfood",
+    "pk": 10,
+    "fields": {
+      "date_created": "2021-12-03T00:00:00Z",
+      "date_updated": "2021-12-03T00:00:00Z",
+      "title": "qweqewqe",
+      "description": "",
+      "cal": 222,
+      "user": 1
+    }
+  },
+  {
+    "model": "core.userfood",
+    "pk": 11,
+    "fields": {
+      "date_created": "2021-12-01T00:00:00Z",
+      "date_updated": "2021-11-29T17:27:56.646Z",
+      "title": "ada",
+      "description": "",
+      "cal": 555,
+      "user": 1
+    }
+  }
+]
