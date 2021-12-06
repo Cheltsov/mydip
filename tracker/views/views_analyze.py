@@ -68,9 +68,6 @@ def analyzeParam(request, name):
                 'title': UserExtSettings._meta.get_field(field.name).verbose_name,
                 'corr_title': corr_title(round(r.slope, 2))
             })
-            print(round(r.slope, 2))
-            print(corr_title(round(r.slope, 2)))
-            print('---------')
 
         return render(request, 'analyze/analyze.html',
                       {'dataReg': dataReg, 'current_name': UserExtSettings._meta.get_field(name).verbose_name})
