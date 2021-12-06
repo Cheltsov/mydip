@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -152,3 +154,11 @@ THUMBNAIL_ALIASES = {
 }
 
 THUMBNAIL_BASEDIR = 'thumbnails'
+
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+
+django_heroku.settings(locals())
